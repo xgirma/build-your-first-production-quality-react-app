@@ -7,3 +7,4 @@ Based on [Andrew Van Slaars course on egghead.io](https://egghead.io/courses/bui
 
 [02. Render a React UI with JSX](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.02)
 
+[03. Render a React UI Based on Initial State](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.03)
