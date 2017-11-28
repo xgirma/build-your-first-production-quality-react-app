@@ -1,3 +1,8 @@
+# Render a React UI with JSX
+
+I'm going to start by creating a div that I'm going to wrap everything else in, and I want to give this div a class so that I can style it later. And if you notice when we look at the existing code, we have `className` rather than `class` being used as the attribute. And the reason for this is simple -- classes are reserved for JavaScript.
+
+```javascript
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
@@ -14,13 +19,6 @@ class App extends Component {
           <form>
               <input type='text' />
           </form>
-            <div className='Todo-List'>
-                <ul>
-                    <li><input type="checkbox" /> Learn JSX</li>
-                    <li><input type="checkbox" /> Build an Awesome App</li>
-                    <li><input type="checkbox" /> Ship It!</li>
-                </ul>
-            </div>
         </div>
       </div>
     );
@@ -28,3 +26,6 @@ class App extends Component {
 }
 
 export default App;
+```
+
+
