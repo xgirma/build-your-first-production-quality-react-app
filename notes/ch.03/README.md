@@ -152,7 +152,7 @@ At the moment, we don't have an onchange handler. The way we can get rid of this
 
 ```html
 {this.state.todos.map(todo => <li key={todo.id}>
-  <input type="checkbox" defaultChecked={todo.isComplete}/> {todo.name}
-</li>
+    <input type="checkbox" defaultChecked={todo.isComplete}/> {todo.name}
+    </li>
 )}
 ```
