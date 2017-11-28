@@ -10,3 +10,5 @@ Based on [Andrew Van Slaars course on egghead.io](https://egghead.io/courses/bui
 [03. Render a React UI Based on Initial State](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.03)
 
 [04. Synchronize React UI and State with Controlled Components](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.04)
+
+[05. Create a Stateless Functional Component for an Input Form](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.05)
