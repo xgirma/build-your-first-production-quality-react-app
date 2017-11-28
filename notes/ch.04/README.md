@@ -6,7 +6,7 @@ This means the `changes to our state should be reflected in the view`. As we see
 
 If I type something into this text box, we'll see that displayed in the view, but it isn't tracked in our state anywhere. `We always want our state to be in sync with our view`. Let's go ahead and fix this.
 
-<img width="425" alt="screen shot 2017-11-28 at 2 27 13 am" src="https://user-images.githubusercontent.com/5876481/33314867-c0e908a2-d3e3-11e7-9c5a-1109b6045810.png">
+<img width="412" alt="screen shot 2017-11-28 at 2 27 13 am" src="https://user-images.githubusercontent.com/5876481/33316783-0689c56c-d3ea-11e7-9951-19e0b1f95cd6.png">
 
 Let's start by adding another property to our application state. I am going to create a value called "currentTodo."
 
@@ -41,7 +41,7 @@ class App extends Component {
 
 Now, when I try to `type` into here, `nothing is going to happen`. That's because my value is set to that `empty string`, and currently, I have no way of changing that. 
 
-<img width="356" alt="screen shot 2017-11-28 at 2 35 51 am" src="https://user-images.githubusercontent.com/5876481/33315214-e400e84a-d3e4-11e7-9ccd-986d8a1f724c.png">
+<img width="314" alt="screen shot 2017-11-28 at 2 35 51 am" src="https://user-images.githubusercontent.com/5876481/33316784-06a0ea30-d3ea-11e7-942e-222f551e0252.png">
 
         :blossom: event handler :honeybee: :honeybee:
 
@@ -49,7 +49,7 @@ Now, when I try to `type` into here, `nothing is going to happen`. That's becaus
 
 Let's start by adding a method to the component. I'm going to call that `handleInputChange`. That's going to accept an `event`. It will get the value of the text input by calling `event.target.value`. We want to use this to reassign the `currentTodo` property in our state.
 
-        :blossom: event.target.value :honeybee: :honeybee:
+:blossom: event.target.value :honeybee: :honeybee:
         
 Call the components, `setState` method and pass in a new value. In order for this method `to update our state`, we have to do two things. 
 
@@ -105,7 +105,7 @@ As I type each character, we're going to see the `currentTodo` in our state down
 
 By doing this, `we've ensured that our view as a function of state, keeping the rendered output and the state data in sync`.
 
-<img width="431" alt="screen shot 2017-11-28 at 2 50 44 am" src="https://user-images.githubusercontent.com/5876481/33315956-09115f3c-d3e7-11e7-912b-193a40ea7e10.png">
+<img width="425" alt="screen shot 2017-11-28 at 2 50 44 am" src="https://user-images.githubusercontent.com/5876481/33316785-06b5b9ba-d3ea-11e7-8ed2-b94281d9b2e6.png">
 
-        :sushi: our view as a function of state :bread:
+:sushi: our view as a function of state :bread:
      
