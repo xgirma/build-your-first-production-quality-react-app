@@ -4,3 +4,6 @@ Based on [Andrew Van Slaars course on egghead.io](https://egghead.io/courses/bui
 
 ## Content
 [01. Bootstrap a React Application through the CLI with Create React App](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.01)
+
+[02. Render a React UI with JSX](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.02)
+
