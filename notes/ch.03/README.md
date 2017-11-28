@@ -110,42 +110,39 @@ import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
-    constructor() {
-        super();
-        this.state = {
-            todos: [
-                {id: 1, name: 'Learn JSX', isComplete: true}, // ***
-                {id: 2, name: 'Build an Awesome App', isComplete: false},
-                {id: 3, name: 'Ship It!', isComplete: false},
-            ]
-        }
+  constructor() {
+    super();
+    this.state = {
+      todos: [
+        {id: 1, name: 'Learn JSX', isComplete: true}, // ***
+        {id: 2, name: 'Build an Awesome App', isComplete: false},
+        {id: 3, name: 'Ship It!', isComplete: false},
+      ]
     }
+  }
 
-    render() {
-        return (
-            <div className="App">
-                // ...
-                <div className="Todo-App">
-                    <form>
-                        <input type='text'/>
-                    </form>
-                    <div className='Todo-List'>
-                        <ul>
-                            {this.state.todos.map(
-                                todo => <li key={todo.id}>
-                                            <input type="checkbox" checked={todo.isComplete}/> {todo.name} // ***
-                                        </li>
-                            )}
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        );
-    }
-}                                           
-
+  render() {
+    return (
+      <div className="App">
+        // ***
+        <div className="Todo-App">
+          <form>
+            <input type='text'/>
+          </form>
+          <div className='Todo-List'>
+            <ul>
+              {this.state.todos.map(todo => <li key={todo.id}>
+                  <input type="checkbox" checked={todo.isComplete}/> {todo.name} // ***
+                </li>
+              )}
+            </ul>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
 export default App;
-  
 ```
 We'll see that our first item is now checked, but if we look at our `DevTools`, we have a `warning`. The warning is telling us that `we provided a checked property on a form without an onchange handler`. 
 
@@ -154,11 +151,8 @@ We'll see that our first item is now checked, but if we look at our `DevTools`, 
 At the moment, we don't have an onchange handler. The way we can get rid of this warning is to change that checked property to default checked (`defaultChecked`).
 
 ```html
-<ul>
-    {this.state.todos.map(
-        todo => <li key={todo.id}>
-                    <input type="checkbox" defaultChecked={todo.isComplete}/> {todo.name} // ***
-                </li>
-    )}
-</ul>
+{this.state.todos.map(todo => <li key={todo.id}>
+  <input type="checkbox" defaultChecked={todo.isComplete}/> {todo.name}
+</li>
+)}
 ```
