@@ -30,3 +30,7 @@ We’ll continue the refactoring effort and break the remaining pieces of the ap
 [07. Validate Component Input with Prop Types in React](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.07)
 
 React gives us a mechanism called PropTypes to ensure that the property values passed into components are of the correct type. By ensuring the correct data is passed to our components, we can avoid potential bugs and more confidently share components with a team or as open source libraries.
+
+[08. Add Data to a List without Mutations](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.08)
+
+In this lesson, we’ll create a utility function to add items to a list, avoiding mutation by returning a new array. We’ll verify this behavior by creating unit tests with Jest.
