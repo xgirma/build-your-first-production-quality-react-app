@@ -26,3 +26,7 @@ We’ll refactor our existing code, making the todo form a separate component. W
 [06. Refactor React Components to be Stateless Functional Components](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.06)
 
 We’ll continue the refactoring effort and break the remaining pieces of the application into their own stateless functional components and see how components can be used within other components.
+
+[07. Validate Component Input with Prop Types in React](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.07)
+
+React gives us a mechanism called PropTypes to ensure that the property values passed into components are of the correct type. By ensuring the correct data is passed to our components, we can avoid potential bugs and more confidently share components with a team or as open source libraries.
