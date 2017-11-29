@@ -23,6 +23,7 @@ We’ll make the input field a “controlled component” by reacting to each ch
 
 We’ll refactor our existing code, making the todo form a separate component. We’ll pass values from the App container into the new component via props. We’ll look at the differences between state and props in React and see how state can be passed down to other components as props.
 
-[05. Refactor React Components to be Stateless Functional Components](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.06)
+[06. Refactor React Components to be Stateless Functional Components](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.06)
 
 We’ll continue the refactoring effort and break the remaining pieces of the application into their own stateless functional components and see how components can be used within other components.
+gi
