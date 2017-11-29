@@ -98,7 +98,7 @@ export const TodoList = (props) => (
 );
 ```
 This would work, but it's going to get very verbose. There's a much faster way to do this. :open_mouth: :star: :collision: 
-... the spread operator :fire: :ok_hand: That's going to take all the properties of `todo` and spread them out and pass them 
+... the `spread operator` :fire: :ok_hand: That's going to take all the properties of `todo` and spread them out and pass them 
 into this component as their own individual properties.
 
 `````javascript
@@ -129,7 +129,7 @@ TodoItem.js before cut
 import React from 'react';
 
 export const TodoItem = (props) => (
-    <li> // *** before
+    <li key={props.id}> // *** before
         <input type="checkbox" defaultChecked={props.isComplete}/> {props.name}
     </li>
 );
@@ -140,7 +140,7 @@ TodoItem.js after cut
 import React from 'react';
 
 export const TodoItem = (props) => (
-    <li key={props.id}> // after 
+    <li> // after 
         <input type="checkbox" defaultChecked={props.isComplete}/> {props.name}
     </li>
 );
