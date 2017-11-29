@@ -89,7 +89,7 @@ TodoForm.propTypes = {
 
 > 1. `name`, which is going to be a string. We'll save it as required. 
 
-> 2. We're also going to have `isComplete`. That's going to be a `Boolean` value, so we'll specify that with `bool`. `We're not going to make this required because if it's undefined it will default to falsey and that's fine.`
+> 2. We're also going to have `isComplete`. That's going to be a `Boolean` value, so we'll specify that with `bool`. `We're not going to make this required because if it's undefined it will default to falsey.`
 
 > 3. We're not using it in the component yet, but we are going to need the ID from the todo, so we'll also accept an ID of type number. We'll say that is required as well.
 
@@ -109,3 +109,5 @@ TodoItem.propTypes = {
     id: PropTypes.number.isRequired
 };
 ```
+
+:warning: :warning: :warning: For a `Boolean` value we'll give `bool`. We're not going to make a `bool` required because `if it's undefined` it will `default to falsey`. :warning: :warning: :warning:
