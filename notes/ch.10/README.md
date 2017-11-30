@@ -23,24 +23,18 @@ If this method gets `called` it means `you're trying to submit an empty todo or 
 
 Inside the `render` method
 
-```javascript
+```diff
 render() {
-    const submitHandler = this.state.currentTodo ? this.handleSubmit : this.handleEmptySubmit; // ***
+    + const submitHandler = this.state.currentTodo ? this.handleSubmit : this.handleEmptySubmit; // ***
 
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo"/>
-          <h1 className="App-title">React Todos</h1>
-        </header>
         <div className="Todo-App">
           <TodoForm
             handleInputChange={this.handleInputChange}
             currentTodo={this.state.currentTodo}
-            ```diff
             - handleSubmit={this.handleSubmit}
             + handleSubmit={this.submitHandler}
-            ```
           />
           <TodoList todos={this.state.todos}/>
         </div>
