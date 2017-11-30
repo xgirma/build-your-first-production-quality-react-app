@@ -23,7 +23,7 @@ If this method gets `called` it means `you're trying to submit an empty todo or 
 
 Inside the `render` method
 
-``` javascript
+```javascript
 render() {
     + const submitHandler = this.state.currentTodo ? this.handleSubmit : this.handleEmptySubmit; // ***
 
@@ -33,8 +33,8 @@ render() {
           <TodoForm
             handleInputChange={this.handleInputChange}
             currentTodo={this.state.currentTodo}
-            - handleSubmit={this.handleSubmit} // #f03c15
-            + handleSubmit={this.submitHandler}
+            // handleSubmit={this.handleSubmit}
+            handleSubmit={this.submitHandler} // ***
           />
           <TodoList todos={this.state.todos}/>
         </div>
