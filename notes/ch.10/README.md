@@ -79,6 +79,10 @@ At page load
 
 After trying to enter empty todo
 
+<img width="1081" alt="screen shot 2017-11-30 at 1 07 41 am" src="https://user-images.githubusercontent.com/5876481/33423069-97488380-d56c-11e7-9b7d-651ea77f4e7b.png">
+
+Entering a todo
+
 <img width="1053" alt="screen shot 2017-11-30 at 12 57 23 am" src="https://user-images.githubusercontent.com/5876481/33422554-ed91c528-d56a-11e7-928b-3e5716129625.png">
 
 If that's true I'm just going to use `double ampersand` here, so `if it evaluates to true it will then evaluate the statement that comes after it`.
