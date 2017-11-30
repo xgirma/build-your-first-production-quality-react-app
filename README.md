@@ -36,6 +36,11 @@ React gives us a mechanism called PropTypes to ensure that the property values p
 In this lesson, we’ll create a utility function to add items to a list, avoiding mutation by returning a new array. We’ll verify this behavior by creating unit tests with Jest.
 
 
-[09. Update React Application State from Form Input](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.08)
+[09. Update React Application State from Form Input](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.09)
 
 We’ll add a handler to the form so we can take new input and use it to update the application state. We’ll append new items to the list with the AddTodo function and replace the todos list in state. We’ll also clear out our form so it can accept new todos.
+
+[10. Prevent Empty Form Values with Conditional Submit Handlers](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.10)
+
+We’ll take advantage of the controlled nature of the todo input and the first class nature of javascript functions to dynamically assign the form submission handler. An empty todo will trigger a submission handler that is only concerned with handling an error state, and when the input is valid, the form will use the standard submit handler.
+

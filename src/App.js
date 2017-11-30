@@ -15,6 +15,7 @@ class App extends Component {
       ],
       currentTodo: ''
     }
+
     this.handleInputChange = this.handleInputChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
   }
@@ -36,7 +37,16 @@ class App extends Component {
     })
   }
 
+  handleEmptySubmit(evt){
+    evt.preventDefault();
+    this.setState({
+      errorMessage: 'Please supply a todo name'
+    })
+  }
+
   render() {
+    const submitHandler = this.state.currentTodo ? this.handleSubmit : this.handleEmptySubmit;
+
     return (
       <div className="App">
         <header className="App-header">
