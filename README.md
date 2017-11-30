@@ -44,3 +44,6 @@ We’ll add a handler to the form so we can take new input and use it to update 
 
 We’ll take advantage of the controlled nature of the todo input and the first class nature of javascript functions to dynamically assign the form submission handler. An empty todo will trigger a submission handler that is only concerned with handling an error state, and when the input is valid, the form will use the standard submit handler.
 
+[11. Use ES2016 Property Initializer Syntax in ES6 classes](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.11)
+
+Create react app provides support for es2016 property initializer syntax out of the box. In this lesson, we’ll refactor the App component to use property initializers and look at the advantages of this syntax.
