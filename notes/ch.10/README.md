@@ -25,7 +25,7 @@ Inside the `render` method
 
 ```javascript
 render() {
-    + const submitHandler = this.state.currentTodo ? this.handleSubmit : this.handleEmptySubmit; // ***
+    const submitHandler = this.state.currentTodo ? this.handleSubmit : this.handleEmptySubmit; // +
 
     return (
       <div className="App">
@@ -33,8 +33,8 @@ render() {
           <TodoForm
             handleInputChange={this.handleInputChange}
             currentTodo={this.state.currentTodo}
-            // handleSubmit={this.handleSubmit}
-            handleSubmit={this.submitHandler} // ***
+            // handleSubmit={this.handleSubmit} // -
+            handleSubmit={submitHandler} // +
           />
           <TodoList todos={this.state.todos}/>
         </div>
@@ -42,3 +42,75 @@ render() {
     );
   }
 ```
+
+:honeybee: :honeybee: :honeybee: With that in place I can save the file and we'll take a look at how this works in the browser. Take a look at React DevTools and I'm going to expand this out. I'm going to find my `TodoForm` component. We'll see that it has a `handleSubmit` property that's `bound to handleEmptySubmit`. That's because we have `no value` in here.
+
+<img width="1059" alt="screen shot 2017-11-30 at 12 56 51 am" src="https://user-images.githubusercontent.com/5876481/33422152-8b80ff8a-d569-11e7-96fc-143a7cbb6ff8.png">
+
+:dolphin: :dolphin: :dolphin: As soon as I add a value the binding to `handleSubmit` property becomes `bound to handleSubmit`. That binding will stay put as long as I have content in currentTodo.
+
+<img width="1053" alt="screen shot 2017-11-30 at 12 57 23 am" src="https://user-images.githubusercontent.com/5876481/33422153-8b95e896-d569-11e7-93fe-bc8d68e6dab6.png">
+
+```javascript
+import React from 'react';
+import {PropTypes} from 'prop-types';
+
+export const TodoForm = (props) => (
+  <form onSubmit={props.handleSubmit}> // ***
+    <input
+      type='text'
+      onChange={props.handleInputChange}
+      value={props.currentTodo}/>
+  </form>
+);
+
+TodoForm.propTypes = {
+  currentTodo: PropTypes.string.isRequired,
+  handleInputChange: PropTypes.func.isRequired,
+  handleSubmit: PropTypes.func.isRequired
+};
+```
+
+:pig: :pig: :pig: If I go to the form and I try to submit and empty todo, we'll see that our state is updated and it now has the error message that we specified in our `handleEmptySubmit` method.
+
+At page load
+
+<img width="1059" alt="screen shot 2017-11-30 at 12 56 51 am" src="https://user-images.githubusercontent.com/5876481/33422553-ed7dc67c-d56a-11e7-87af-30bdb9e128fb.png">
+
+After trying to enter empty todo
+
+<img width="1053" alt="screen shot 2017-11-30 at 12 57 23 am" src="https://user-images.githubusercontent.com/5876481/33422554-ed91c528-d56a-11e7-928b-3e5716129625.png">
+
+If that's true I'm just going to use `double ampersand` here, so `if it evaluates to true it will then evaluate the statement that comes after it`.
+
+````javascript
+<div className="Todo-App">
+  {this.state.errorMessage && <span className='error'>{this.state.errorMessage}</span>} // ***
+  <TodoForm
+    handleInputChange={this.handleInputChange}
+    currentTodo={this.state.currentTodo}
+    handleSubmit={submitHandler}
+  />
+  <TodoList todos={this.state.todos}/>
+</div>
+````
+
+The only problem with our current setup is once I'm showing an error message and I put in a valid entry and submit it the submission will work, but the error message hangs around.
+
+Solution
+
+```javascript
+handleSubmit(evt) {
+    evt.preventDefault();
+    const newId = generateId();
+    const newTodo = { id: newId, name: this.state.currentTodo, isComplete: false }
+    const updatedTodos = addTodo(this.state.todos, newTodo)
+    this.setState({
+      todos: updatedTodos,
+      currentTodo: '',
+      errorMessage: ''
+    })
+  }
+```
+
+Now an invalid submission will show the error message, but a valid one will add the new value and hide the error message.
