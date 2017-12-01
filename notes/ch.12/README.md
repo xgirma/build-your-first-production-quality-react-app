@@ -71,5 +71,5 @@ export const generateId = () => Math.floor(Math.random()*100000);
 export const findById = (id, list) => list.find(item => item.id === id )
 ```
 
-<img width="614" alt="screen shot 2017-12-01 at 12 59 20 am" src="https://user-images.githubusercontent.com/5876481/33475418-3f5f50f0-d633-11e7-93ac-84709782ca89.png">
+<img width="324" alt="screen shot 2017-12-01 at 1 01 50 am" src="https://user-images.githubusercontent.com/5876481/33475531-98b1c282-d633-11e7-8ebb-ed85f9924b03.png">
 
