@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { TodoForm, TodoList } from './components/todo/index';
-import { generateId, addTodo} from "./lib/todoHelpers";
+import { generateId, addTodo } from "./lib/todoHelpers";
 
 class App extends Component {
   state = {
