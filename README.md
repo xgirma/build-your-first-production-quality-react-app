@@ -47,3 +47,7 @@ We’ll take advantage of the controlled nature of the todo input and the first 
 [11. Use ES2016 Property Initializer Syntax in ES6 classes](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.11)
 
 Create react app provides support for es2016 property initializer syntax out of the box. In this lesson, we’ll refactor the App component to use property initializers and look at the advantages of this syntax.
+
+[12. Update Data in a List without Mutations](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.12)
+
+We’ll build small, focused functions to select an object from a list, apply updates to an object and replace an item in a list, avoid mutations to those objects along the way by returning new items that reflect our changes. We’ll verify this behavior by following a test driven approach using Jest.
