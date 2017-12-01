@@ -23,14 +23,14 @@ test('findById should return the expected item from an array', () => {
   expect(result).toEqual(expected)
 });
 
-test.skip('toggleTodo should toggle the isComplete prop of a todo', () => {});
+test.skip('toggleTodo should toggle the isComplete prop of a todo', () => {}); // ***
 ````
 `ReferenceError: findById is not defined`
 
 <img width="491" alt="screen shot 2017-12-01 at 12 53 33 am" src="https://user-images.githubusercontent.com/5876481/33475130-20f47e48-d632-11e7-8808-a2747db6d02c.png">
 
 ```javascript
-import { addTodo, findById } from './todoHelpers';
+import { addTodo, findById } from './todoHelpers'; // ***
 
 test('findById should return the expected item from an array', () => {
   const startTodos = [
@@ -56,7 +56,7 @@ export const addTodo = (list, item) => [...list, item];
 
 export const generateId = () => Math.floor(Math.random()*100000);
 
-export const findById = () => {}
+export const findById = () => {} // ***
 ```
 
 `Comparing two different types of values. Expected object but received undefined.`
@@ -68,7 +68,7 @@ export const addTodo = (list, item) => [...list, item];
 
 export const generateId = () => Math.floor(Math.random()*100000);
 
-export const findById = (id, list) => list.find(item => item.id === id )
+export const findById = (id, list) => list.find(item => item.id === id); // ***
 ```
 
 <img width="324" alt="screen shot 2017-12-01 at 1 01 50 am" src="https://user-images.githubusercontent.com/5876481/33475531-98b1c282-d633-11e7-8ebb-ed85f9924b03.png">
