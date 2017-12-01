@@ -51,3 +51,8 @@ Create react app provides support for es2016 property initializer syntax out of 
 [12. Update Data in a List without Mutations](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.12)
 
 We’ll build small, focused functions to select an object from a list, apply updates to an object and replace an item in a list, avoid mutations to those objects along the way by returning new items that reflect our changes. We’ll verify this behavior by following a test driven approach using Jest.
+
+[13. Pass Data To Event Handlers with Partial Function Application](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.13)
+
+In this lesson we’ll see how to pass an item’s id value in an event handler and get the state to reflect our change. We’ll also create a helper function that allows us to use partial function application to clean up the event handler code and make it more “functional”
+
