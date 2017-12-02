@@ -127,7 +127,7 @@ export const partial = (fn, ...args) => {};
 
 First, we'll define our arguments. If you remember from the test we're parsing `Add` from the `first argument` which is our `function`. We're going to make this generic. We're going to use `fn` to represent our function and we're parsing our argument.
 
-:pill: rest operator :pill:
+:rocket: rest operator :speedboat:
 
 We want to be able to accept multiple arguments. What I am going to do is I'm going to use the `Rest operator` here, which is going to take `a comma separated list of arguments` or the rest of the arguments, anything that comes after that first one, and it's going to `bundle them up in an array`.
 
@@ -135,7 +135,7 @@ We want to be able to accept multiple arguments. What I am going to do is I'm go
 export const partial = (fn, ...args) => fn.bind(null, ...args);
 ```
 
-:pill: spread operator :pill:
+:airplane: spread operator :sailboat:
 
 I'm going to reference that function, I'm going to call `Bind` on it. I'm going to pass it `null`, because I `don't want to change its contacts`. I need to pass those arguments into Bind. Bind takes its arguments as a comma separated list. We're going to use `...` again, but this time, it's the `spread operator`. 
 
@@ -146,9 +146,11 @@ This means we can partially apply functions with as many arguments as we want an
 Let's go back to the `TodoItem` component and use newly created `partial` utility.
 
 ````javascript
+import { partial } from '../../lib/utils';
+
 export const TodoItem = (props) => {
   // const handleToggle = props.handleToggle.bind(null, props.id);
-  const handleToggle = partial(props.handleToggle, props.id);
+  const handleToggle = partial(props.handleToggle, props.id); // ***
 
   return (
     <li>
