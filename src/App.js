@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { TodoForm, TodoList } from './components/todo/index';
-import { generateId, addTodo } from "./lib/todoHelpers";
+import { generateId, addTodo, findById, toggleTodo, updateTodo } from "./lib/todoHelpers";
 
 class App extends Component {
   state = {
@@ -12,6 +12,14 @@ class App extends Component {
       {id: 3, name: 'Ship It!', isComplete: false},
     ],
     currentTodo: ''
+  }
+
+  handleToggle = (id) => {
+    const todo = findById(id, this.state.todos)
+    const toggled = toggleTodo(todo)
+    const updatedTodos = updateTodo(this.state.todos, toggled)
+
+    this.setState({ todos: updatedTodos })
   }
 
   handleInputChange = (evt) => {
@@ -55,7 +63,7 @@ class App extends Component {
             currentTodo={this.state.currentTodo}
             handleSubmit={submitHandler}
           />
-          <TodoList todos={this.state.todos}/>
+          <TodoList handleToggle={this.handleToggle} todos={this.state.todos}/>
         </div>
       </div>
     );
