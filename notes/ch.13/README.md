@@ -71,6 +71,92 @@ export const TodoItem = (props) => (
 
 <img width="947" alt="screen shot 2017-12-01 at 2 41 28 am" src="https://user-images.githubusercontent.com/5876481/33479241-3c07c744-d641-11e7-854f-2a3ff4c77ef7.png">
 
-> We're defining this `arrow function inline` for this `onChange handler` because we need to `parse some data onto our handler that's not an event object`. 
+> We're defining this `arrow function inline` for this `onChange handler` (onChange={ () => props.handleToggle(props.id) }) because we need to `parse some data onto our handler that's not an event object`. 
 
 This is something we'll need to do a lot in react components that deal with collections of data. Let's refactor this a bit to clean up the .jsx.
+
+```javascript
+export const TodoItem = (props) => {
+  const handleToggle = () => props.handleToggle(props.id); // ***
+  
+  return (
+    <li>
+      <input type="checkbox"
+             onChange={ handleToggle } // ***
+             defaultChecked={props.isComplete}/> {props.name}
+    </li>
+  )
+};
+```
+
+> We can take this one step further getting rid of this arrow function altogether. Instead using `bind` to partially apply this function. I'm going to call `props.handleToggle.bind`. My first argument is going to be `null`, because I'm not interested in `resetting the context`. My second argument will be `props.id`. This means `handleToggle` is now equal to a function that already knows what its `first argument's value` is, which is the `id` todo for this particular item.
+
+```javascript
+export const TodoItem = (props) => {
+  const handleToggle = props.handleToggle.bind(null, props.id); // ***
+
+  return (
+    <li>
+      <input type="checkbox"
+             onChange={ handleToggle }
+             defaultChecked={props.isComplete}/> {props.name}
+    </li>
+  )
+};
+```
+
+Having the ability to partially apply a function through bind is great, but we're going to use this in multiple places. Let's wrap this up in a `utility function` that cleans this up even more.
+
+```javascript
+import {partial } from './utils';
+
+const add = (a, b) => a + b;
+
+test('partial applies the first argument ahead of time', () => {
+  const inc = partial(add, 1);
+  const result = inc(2);
+  expect(result).toBe(3);
+});
+```
+
+The test defines a constant called `inc` which is a function that's the result of partially applying add with the first argument `1`. We define the result which is a call to that `inc` function, parsing it `2`, and we expect the return result to be `3`, because that first argument in this case, `A` should already be equal to `1`. We set our expectation that we expect the result to be `3`.
+
+```javascript
+export const partial = (fn, ...args) => {};
+```
+
+First, we'll define our arguments. If you remember from the test we're parsing `Add` from the `first argument` which is our `function`. We're going to make this generic. We're going to use `fn` to represent our function and we're parsing our argument.
+
+:pill: rest operator :pill:
+
+We want to be able to accept multiple arguments. What I am going to do is I'm going to use the `Rest operator` here, which is going to take `a comma separated list of arguments` or the rest of the arguments, anything that comes after that first one, and it's going to `bundle them up in an array`.
+
+```javascript
+export const partial = (fn, ...args) => fn.bind(null, ...args);
+```
+
+:pill: spread operator :pill:
+
+I'm going to reference that function, I'm going to call `Bind` on it. I'm going to pass it `null`, because I `don't want to change its contacts`. I need to pass those arguments into Bind. Bind takes its arguments as a comma separated list. We're going to use `...` again, but this time, it's the `spread operator`. 
+
+These (`(fn, ...args)` `(null, ...args)`) look the same but they're serving two different purposes. `(fn, ...args)` is going to take multiple arguments turn them into an array. On the other side, `(null, ...args)`, we're going to spread that array back out as arguments parsed into Bind. 
+
+This means we can partially apply functions with as many arguments as we want and call it later with additional arguments or without and it'll run as expected.
+
+Let's go back to the `TodoItem` component and use newly created `partial` utility.
+
+````javascript
+export const TodoItem = (props) => {
+  // const handleToggle = props.handleToggle.bind(null, props.id);
+  const handleToggle = partial(props.handleToggle, props.id);
+
+  return (
+    <li>
+      <input type="checkbox"
+             onChange={ handleToggle }
+             defaultChecked={props.isComplete}/> {props.name}
+    </li>
+  )
+};
+````
+
