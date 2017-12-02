@@ -56,3 +56,7 @@ We’ll build small, focused functions to select an object from a list, apply up
 
 In this lesson we’ll see how to pass an item’s id value in an event handler and get the state to reflect our change. We’ll also create a helper function that allows us to use partial function application to clean up the event handler code and make it more “functional”
 
+[14. Create a Pipe Function to Enable Function Composition](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.14)
+
+In this lesson, we’ll refactor a series of function calls into a functional pipeline, `making the code more declarative` and removing the need for intermediate variables. Rather than reaching for a utility library, we’ll start by building our own pipe function to gain a clear understanding of `how left-to-right function composition` is accomplished in JavaScript.
+
