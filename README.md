@@ -35,7 +35,6 @@ React gives us a mechanism called PropTypes to ensure that the property values p
 
 In this lesson, we’ll create a utility function to add items to a list, avoiding mutation by returning a new array. We’ll verify this behavior by creating unit tests with Jest.
 
-
 [09. Update React Application State from Form Input](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.09)
 
 We’ll add a handler to the form so we can take new input and use it to update the application state. We’ll append new items to the list with the AddTodo function and replace the todos list in state. We’ll also clear out our form so it can accept new todos.
@@ -60,3 +59,6 @@ In this lesson we’ll see how to pass an item’s id value in an event handler 
 
 In this lesson, we’ll refactor a series of function calls into a functional pipeline, `making the code more declarative` and removing the need for intermediate variables. Rather than reaching for a utility library, we’ll start by building our own pipe function to gain a clear understanding of `how left-to-right function composition` is accomplished in JavaScript.
 
+[15. Remove Items from a List without Mutations](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.15)
+
+In this lesson, we’ll add the ability to remove items from our list. We’ll add some css to show a delete link while hovered over an item and handle a click event from the component to remove the corresponding item from the list by its id.
