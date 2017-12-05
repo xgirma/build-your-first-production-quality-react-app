@@ -68,3 +68,7 @@ In this lesson, we’ll add the ability to remove items from our list. We’ll a
 [16. Use React Context to Manage Application State Through Routes](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.16)
 
 We’ll create a Router component that will wrap our application and manage all URL related state. We’ll see how we can use React’s built in context mechanism to pass data and functions between components without having to pass props all the way down through the component tree.
+
+[17. Use React Context to Manage Application State Through Routes](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.17)
+
+We’ll create a Router component that will wrap our application and manage all URL related state. We’ll see how we can use React’s built in context mechanism to pass data and functions between components without having to pass props all the way down through the component tree.

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { PropTypes } from 'prop-types'
 
 export class Link extends Component {
   handleClick = (evt) => {
@@ -15,3 +16,7 @@ export class Link extends Component {
     )
   }
 }
+
+Link.propTypes = {
+  to: PropTypes.string.isRequired
+};

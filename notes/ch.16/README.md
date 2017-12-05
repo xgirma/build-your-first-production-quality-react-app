@@ -113,3 +113,6 @@ render () {
     )
   }
 ```
+
+Just to make sure that this `link` component is complete, I'm going to set in some `prop types`
+
