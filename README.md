@@ -2,6 +2,8 @@
 
 Based on [Andrew Van Slaars course on egghead.io](https://egghead.io/courses/build-your-first-production-quality-react-app)
 
+Github link [todo-react-egghead](https://github.com/uuzaix/todo-react-egghead)
+
 ## Content
 [01. Bootstrap a React Application through the CLI with Create React App](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.01)
 
@@ -62,3 +64,7 @@ In this lesson, we’ll refactor a series of function calls into a functional pi
 [15. Remove Items from a List without Mutations](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.15)
 
 In this lesson, we’ll add the ability to remove items from our list. We’ll add some css to show a delete link while hovered over an item and handle a click event from the component to remove the corresponding item from the list by its id.
+
+[16. Use React Context to Manage Application State Through Routes](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.16)
+
+We’ll create a Router component that will wrap our application and manage all URL related state. We’ll see how we can use React’s built in context mechanism to pass data and functions between components without having to pass props all the way down through the component tree.
