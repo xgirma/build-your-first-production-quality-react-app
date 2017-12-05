@@ -88,7 +88,7 @@ export class Link extends Component {
 }
 ```
 
-Failed to compile error
+**Failed to compile error**
 
 <img width="475" alt="screen shot 2017-12-05 at 3 36 14 am" src="https://user-images.githubusercontent.com/5876481/33605299-f7f0849e-d96d-11e7-8ff1-c484e8e484ba.png">
 
@@ -98,6 +98,8 @@ Failed to compile error
     history.pushState(null, '', this.props.to) // eslint-disable-line
   }
 ```
+
+**Link must not point to '#' error**
 
 <img width="800" alt="screen shot 2017-12-05 at 3 41 35 am" src="https://user-images.githubusercontent.com/5876481/33605356-438bd3a4-d96e-11e7-9d13-4fd2191bf169.png">
 
