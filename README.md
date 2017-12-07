@@ -92,3 +92,7 @@ We’ll cover posting new data to the server using fetch and the `POST` http met
 [22. Show Temporary Messages in a React Application](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.22)
 
 We’ll add a message object to the application state and use that message to conditionally show a message component. We’ll also use a `setTimeout` to update our state and hide the message after a specified period of time.
+
+[23. Update data on the Server with fetch](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.23)
+
+We’ll use fetch and refactor our client-side task completion logic to send an update to the server, and update the UI with a success message once the save has completed successfully.
