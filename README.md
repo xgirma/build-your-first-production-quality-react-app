@@ -76,3 +76,7 @@ We’ll create a Router component that will wrap our application and manage all 
 [18. Filter Data on Property Values](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.18) 
 
 We want to be able to show only items in a certain status so in this lesson, we’ll add a flag to indicate which items to show, and create a function to filter the todos based on that value. We’ll take advantage of route based state to control the filtering behavior.
+
+[19. Keep Application State in Sync with Browser History](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.19)
+
+Using pushState and passing route data via context allows our application to respond to route changes made from Link components, but `using the back and forward buttons in the browser doesn’t update the application state` as we would expect. In this lesson, we’ll add event handling to our Router component to handle history popState events so routing behavior is maintained for the `back` and `forward` buttons.
