@@ -52,6 +52,7 @@ class App extends Component {
     })
 
     createTodo(newTodo)
+      .then(() => this.setState({message: 'Todo added.'}))
   }
 
   handleEmptySubmit = (evt) => {
@@ -73,6 +74,7 @@ class App extends Component {
         </header>
         <div className="Todo-App">
           {this.state.errorMessage && <span className='error'>{this.state.errorMessage}</span>}
+          {this.state.message && <span className='success'>{this.state.message}</span>}
           <TodoForm
             handleInputChange={this.handleInputChange}
             currentTodo={this.state.currentTodo}
