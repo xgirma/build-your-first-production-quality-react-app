@@ -163,8 +163,35 @@ This is all we really have to do in order to consume context.
 
 Since `history.pushState` is already taken care of in our `link handler` in the `router` component, I'm going to take that out of there, and instead, I want to call that `link handler` function. To do that, we're going to reference that through `this.context.linkHandler(this.props.to)`.
 
+```javascript
+import React, { Component } from 'react';
+import { PropTypes } from 'prop-types'
 
+export class Link extends Component {
+  static contextTypes = {
+    route: PropTypes.string,
+    linkHandler: PropTypes.func
+  }
 
+  handleClick = (evt) => {
+    evt.preventDefault()
+    this.context.linkHandler(this.props.to)
+  }
 
+  render () {
+    const activeClass = this.context.route === this.props.to ? 'active' : ''
+    return (
+      <div>{
+        // eslint-disable-next-line
+      }<a href='#'
+          className={activeClass}
+          onClick={this.handleClick} >{this.props.children}</a>
+      </div>
+    )
+  }
+}
 
-
+Link.propTypes = {
+  to: PropTypes.string.isRequired
+};
+```
