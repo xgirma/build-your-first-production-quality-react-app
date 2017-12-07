@@ -31,7 +31,7 @@ Then we find our `handleToggle` method, and we'll do some refactoring.
     const updatedTodos = getUpdatedTodos(updated);
     this.setState({ todos: updatedTodos })
     saveTodo(updated)
-      .then(() => this.showTempmessage('Todo updated'))
+      .then(() => this.showTempMessage('Todo updated'))
   }
 ```
 
