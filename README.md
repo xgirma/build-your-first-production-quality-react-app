@@ -80,3 +80,7 @@ We want to be able to show only items in a certain status so in this lesson, we�
 [19. Keep Application State in Sync with Browser History](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.19)
 
 Using pushState and passing route data via context allows our application to respond to route changes made from Link components, but `using the back and forward buttons in the browser doesn’t update the application state` as we would expect. In this lesson, we’ll add event handling to our Router component to handle history popState events so routing behavior is maintained for the `back` and `forward` buttons.
+
+[20. Load Data From a Server with fetch](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.20)
+
+We’ll fire up json-server so we can run our application against a server. We’ll take advantage of the fetch polyfill provided by create-react-app and leverage the componentDidMount lifecycle event to load our initial todo list. We’ll also add an error message to our UI in the case that the server is unavailable.
