@@ -96,3 +96,7 @@ We’ll add a message object to the application state and use that message to co
 [23. Update data on the Server with fetch](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.23)
 
 We’ll use fetch and refactor our client-side task completion logic to send an update to the server, and update the UI with a success message once the save has completed successfully.
+
+[24. Delete Data on the Server with fetch](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.24)
+
+We’ll use fetch to delete items on the server when the client triggers a removal, and update the UI with a success message once the delete operation on the server has succeeded.
