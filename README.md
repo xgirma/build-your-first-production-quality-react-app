@@ -88,3 +88,7 @@ We’ll fire up json-server so we can run our application against a server. We�
 [21. Save Data to the Server with fetch](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.21)
 
 We’ll cover posting new data to the server using fetch and the `POST` http method. We’ll also update the UI with a success message once the save has completed successfully.
+
+[22. Show Temporary Messages in a React Application](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.22)
+
+We’ll add a message object to the application state and use that message to conditionally show a message component. We’ll also use a `setTimeout` to update our state and hide the message after a specified period of time.
