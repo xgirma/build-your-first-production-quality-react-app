@@ -28,6 +28,15 @@ export class Router extends Component {
     }
   }
 
+  componentDidMount() {
+    // this will fire every time we use the Back and Forward button
+    window.onpopstate = () => {
+      this.setState({
+        route: getCurrentPath()
+      })
+    }
+  }
+
   render () {
     return (<div>{this.props.children}</div>)
   }
