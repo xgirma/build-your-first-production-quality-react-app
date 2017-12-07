@@ -20,3 +20,19 @@ export const createTodo = (todo) => {
 ```
 
 I'm going to come down to the `handleSubmit` method. We're adding our todo and updating our state. Now, I want to call create todo. I want to pass that new todo to the server. So we can confirm that this works, I'm going to add .then.
+
+```javascript
+handleSubmit = (evt) => {
+    evt.preventDefault();
+    const newId = generateId();
+    const newTodo = { id: newId, name: this.state.currentTodo, isComplete: false }
+    const updatedTodos = addTodo(this.state.todos, newTodo)
+    this.setState({
+      todos: updatedTodos,
+      currentTodo: '',
+      errorMessage: ''
+    })
+
+    createTodo(newTodo)
+  }
+```
