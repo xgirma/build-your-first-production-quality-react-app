@@ -84,3 +84,7 @@ Using pushState and passing route data via context allows our application to res
 [20. Load Data From a Server with fetch](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.20)
 
 We’ll fire up json-server so we can run our application against a server. We’ll take advantage of the fetch polyfill provided by create-react-app and leverage the componentDidMount lifecycle event to load our initial todo list. We’ll also add an error message to our UI in the case that the server is unavailable.
+
+[21. Save Data to the Server with fetch](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.21)
+
+We’ll cover posting new data to the server using fetch and the `POST` http method. We’ll also update the UI with a success message once the save has completed successfully.
