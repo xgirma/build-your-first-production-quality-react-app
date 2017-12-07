@@ -72,3 +72,7 @@ We’ll create a Router component that will wrap our application and manage all 
 [17. Use React Context to Manage Application State Through Routes](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.17)
 
 We’ll create a Router component that will wrap our application and manage all URL related state. We’ll see how we can use React’s built in context mechanism to pass data and functions between components without having to pass props all the way down through the component tree.
+
+[18. Filter Data on Property Values](https://github.com/xgirma/build-your-first-production-quality-react-app/tree/ch.18) 
+
+We want to be able to show only items in a certain status so in this lesson, we’ll add a flag to indicate which items to show, and create a function to filter the todos based on that value. We’ll take advantage of route based state to control the filtering behavior.

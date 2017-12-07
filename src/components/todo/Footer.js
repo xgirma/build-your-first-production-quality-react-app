@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from '../router/index'
+import { Link } from '../router'
 
 export const Footer = () => {
   return (
