@@ -44,5 +44,24 @@ I'm going to say, if our message is defined then we'll render out a span with a 
 
 The problem with this is that message is going to `sit there and it won't go away`.
 
+```javascript
+  handleSubmit = (evt) => {
+    evt.preventDefault();
+    const newId = generateId();
+    const newTodo = { id: newId, name: this.state.currentTodo, isComplete: false }
+    const updatedTodos = addTodo(this.state.todos, newTodo)
+    this.setState({
+      todos: updatedTodos,
+      currentTodo: '',
+      errorMessage: ''
+    })
 
+    createTodo(newTodo)
+      .then(() => this.showTempMessage('Todo added.'))
+  }
 
+  showTempMessage = (msg) => {
+    this.setState({message: msg})
+    setTimeout(() => this.setState({message: ''}), 2500)
+  }
+```
