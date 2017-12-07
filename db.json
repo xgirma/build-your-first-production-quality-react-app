@@ -14,16 +14,6 @@
       "id": 3,
       "name": "Connect to Server",
       "isComplete": true
-    },
-    {
-      "id": 4,
-      "name": "Setup fetch",
-      "isComplete": true
-    },
-    {
-      "id": 90966,
-      "name": "obe",
-      "isComplete": false
     }
   ]
 }

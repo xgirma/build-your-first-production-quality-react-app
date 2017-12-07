@@ -52,7 +52,12 @@ class App extends Component {
     })
 
     createTodo(newTodo)
-      .then(() => this.setState({message: 'Todo added.'}))
+      .then(() => this.showTempMessage('Todo added.'))
+  }
+
+  showTempMessage = (msg) => {
+    this.setState({message: msg})
+    setTimeout(() => this.setState({message: ''}), 2500)
   }
 
   handleEmptySubmit = (evt) => {
